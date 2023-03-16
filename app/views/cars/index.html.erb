@@ -1,0 +1,24 @@
+<h1 class="page-title">Nos Voitures</h1>
+
+<div class="card-container">
+  <% @cars.each do |car| %>
+    <%= link_to car_path(car), class: "card-link" do %>
+      <div class="card-product">
+        <div class="card-image-container">
+          <img src="https://classic42.be/wp-content/uploads/2023/03/BMW-850_1-scaled-aspect-ratio-1024-768-1-scaled.jpg" alt="<%= car.marque %> <%= car.modèle %>" class="card-image">
+        </div>
+        <div class="card-product-infos" id="card-text">
+          <div class="infos-title">
+            <h2 class="car-title"><%= car.marque %> <%= car.modèle %></h2>
+          </div>
+          <div class="infos-content">
+            <p class="car-info"><%= car.année %> - <%= car.kilomètres %> km</p>
+          </div>
+          <div class="card-footer">
+            <p class="car-price"><%= car.prix %> €</p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
